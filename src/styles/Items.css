@@ -1,0 +1,49 @@
+.items {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px
+}
+
+.item {
+    display: flex;
+    background: chocolate;
+    width: 200px;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.item-through {
+    width: 200px;
+    font-size: 16px;
+    padding: 10px;
+    border: 5px;
+    text-decoration: line-through;
+    margin-top: 50px;
+    border-radius: 5px;
+}
+
+.btn {
+    margin-top: 15px;
+    margin-left: 20px;
+    width: 40px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    background: gold;
+    color: #000;
+    cursor: pointer;
+}
+
+.btn-row {
+    margin-top: 53px;
+    margin-left: 20px;
+    width: 40px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    background: gold;
+    color: #000;
+    cursor: pointer;
+}
