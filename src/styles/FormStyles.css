@@ -6,3 +6,12 @@
     height: 100vh;
     background: chartreuse;
 }
+
+.clear-completed {
+    margin-top: 50px;
+    margin-left: 170px;
+    padding: 15px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: aqua;
+}

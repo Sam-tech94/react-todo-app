@@ -1,8 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../styles/Form.css"
 
 const TodoForm = ({onSubmit}) => {
     const [input, setInput] = useState("");
+    const ref = useRef(null)
+
+    useEffect(() => {
+        ref.current.focus()
+    }, []);
 
  
     const handleChange = (e) => {
@@ -10,6 +15,9 @@ const TodoForm = ({onSubmit}) => {
     }
 
     const handleKeyDown = (e) => {
+        if (input === "") {
+            return;
+        }
         if (e.code === "Enter") {
             onSubmit({
                 id: String(Math.random()),
@@ -20,9 +28,22 @@ const TodoForm = ({onSubmit}) => {
         }
     };
 
+    const handleClick = (e) => {
+        if (input === "") {
+            return;
+        }
+
+        onSubmit({
+            id: String(Math.random()),
+            text: input
+        });
+        setInput("");
+    };
+
     return (
         <div className="form">
             <input 
+                ref={ref}
                 type="text"
                 className="todo-input"
                 name="todo"
@@ -31,7 +52,7 @@ const TodoForm = ({onSubmit}) => {
                 onKeyDown={handleKeyDown}
                 autoComplete="off"
             />
-            <span className="plus">+</span>
+            <span onClick={handleClick} className="plus">+</span>
         </div>
     );
 };
